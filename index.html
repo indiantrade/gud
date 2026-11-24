@@ -1,120 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Stock Advisor Group – Stock Market Education Community</title>
-<meta name="description" content="A free educational community to learn stock market basics, charts, Nifty, Bank Nifty and options concepts in simple language. Education only.">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html{-webkit-text-size-adjust:100%}
-body{min-height:100vh;background:radial-gradient(circle at 15% 0,#7b2ff7 0,transparent 45%),radial-gradient(circle at 90% 100%,#f107a3 0,transparent 45%),#1a0638;font-family:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#fff;display:flex;justify-content:center;padding:max(12px,env(safe-area-inset-top)) 12px max(12px,env(safe-area-inset-bottom))}
-.card{width:100%;max-width:440px;align-self:flex-start;border-radius:28px;padding:30px 14px 22px;text-align:center;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.avatar{width:116px;height:116px;border-radius:50%;object-fit:cover;background:#3b1a6e;box-shadow:0 0 0 4px #ffc93c,0 0 28px rgba(255,201,60,.55)}
-h1{margin-top:20px;font-size:clamp(26px,8vw,36px);line-height:1.15;font-weight:800}
-h1 span{display:block;background:linear-gradient(90deg,#ffd84d,#ff9a3c);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{margin:14px 4px 18px;color:#eadcff;font-size:15px;line-height:1.6}
-.btn{display:block;min-height:56px;padding:17px 10px;border-radius:40px;background:linear-gradient(90deg,#ffd84d,#ff8a1f);color:#2a0b4d;font-weight:800;font-size:clamp(16px,4.8vw,19px);text-decoration:none;box-shadow:0 8px 24px rgba(255,170,40,.45)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
-.stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:12px 2px}
-.stat b{display:block;color:#ffd84d;font-size:clamp(14px,4.4vw,18px)}
-.stat small{color:#dccaf7;font-size:12px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 18px}
-.item{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:14px 10px;font-weight:700;font-size:clamp(12px,3.6vw,14.5px);text-align:left;line-height:1.3}
-.item i{font-style:normal;font-size:22px}
-.box{margin:0 0 14px;text-align:left;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:16px 14px}
-.box h2{font-size:17px;color:#ffd84d;margin-bottom:10px;text-align:center}
-.box p{font-size:14px;line-height:1.65;color:#eadcff;margin-bottom:8px}
-.box dl dt{font-size:14px;font-weight:700;color:#fff;margin-top:10px}
-.box dl dd{font-size:13.5px;line-height:1.55;color:#dccaf7;margin-top:2px}
-.steps{list-style:none;counter-reset:s}
-.steps li{counter-increment:s;position:relative;font-size:14px;line-height:1.55;color:#fff;padding:9px 0 9px 36px;border-top:1px solid rgba(255,255,255,.12)}
-.steps li:first-child{border-top:0}
-.steps li:before{content:counter(s);position:absolute;left:0;top:9px;width:26px;height:26px;border-radius:50%;background:#ffd84d;color:#2a0b4d;font-weight:800;font-size:13px;text-align:center;line-height:26px}
-.note{border-color:rgba(255,216,77,.5)}
-.disc{margin-top:16px;color:#c9b6e6;font-size:12px;line-height:1.6}
-</style>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4668758756680641');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4668758756680641&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZERO TO HERO - Index Price Action & Market Education</title>
+    
+    <!-- Meta Description for Ads & SEO Compliance -->
+    <meta name="description" content="Master Nifty & BankNifty price action, chart patterns, options market dynamics, and risk management with ZERO TO HERO. 100% Educational Community.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            950: '#022c22',
+                        },
+                        darkbg: '#070b12',
+                        cardbg: '#0d1527',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2.5s ease-in-out infinite alternate',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        },
+                        pulseGlow: {
+                            '0%': { boxShadow: '0 0 15px rgba(16, 185, 129, 0.2)' },
+                            '100%': { boxShadow: '0 0 35px rgba(16, 185, 129, 0.6)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070b12;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Market Grid & Ambient Lighting */
+        .chart-grid-bg {
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.18) 0%, transparent 65%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 36px 36px, 36px 36px;
+        }
+
+        .glass-card {
+            background: rgba(13, 21, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .glass-card-hover {
+            transition: all 0.3s ease;
+        }
+        .glass-card-hover:hover {
+            border-color: rgba(16, 185, 129, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
+        }
+
+        .neon-border {
+            position: relative;
+        }
+        .neon-border::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(90deg, #10b981, #34d399, #059669);
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(4px);
+        }
+    </style>
 </head>
-<body>
-<main class="card">
-  <img class="avatar" src="https://iili.io/oKVlEEG.jpg" alt="Stock Advisor Group" width="116" height="116">
-  <h1>STOCK ADVISOR<span>GROUP ™</span></h1>
-  <p class="sub">Stock Market Education Community •<br>Learn Nifty, Bank Nifty &amp; Options Basics</p>
+<body class="min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-slate-950">
 
-  <a class="btn" href="https://t.me/+CAruIKtBE1dlZmRl" rel="noopener">🚀 JOIN TELEGRAM</a>
+    <!-- Top Banner: Meta & Google Ad Compliance Badge -->
+    <div class="bg-emerald-950/80 border-b border-emerald-500/20 text-xs text-emerald-300 py-2.5 px-4 text-center backdrop-blur-md">
+        <div class="max-w-4xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500 text-slate-950 uppercase tracking-wider">Verified</span>
+            <span class="font-semibold">100% Stock Market Educational & Chart Analysis Channel</span>
+            <span class="hidden sm:inline text-slate-600">•</span>
+            <span class="hidden sm:inline text-slate-400">Strictly No Financial Advisory or Tip Services</span>
+        </div>
+    </div>
 
-  <div class="stats">
-    <div class="stat"><b>Free</b><small>Education</small></div>
-    <div class="stat"><b>Simple</b><small>Language</small></div>
-    <div class="stat"><b>Beginner</b><small>Friendly</small></div>
-  </div>
+    <!-- Main Content Container -->
+    <main class="chart-grid-bg flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="max-w-4xl mx-auto px-4 pt-10 pb-12 text-center relative">
+            
+            <!-- Floating Decorative Accents -->
+            <div class="absolute top-10 left-4 w-24 h-24 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute top-20 right-4 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-  <div class="grid">
-    <div class="item"><i>📈</i>Nifty Basics</div>
-    <div class="item"><i>🏦</i>Bank Nifty Basics</div>
-    <div class="item"><i>💹</i>Options Basics</div>
-    <div class="item"><i>📊</i>Chart Reading</div>
-  </div>
+            <!-- Profile Logo Avatar -->
+            <div class="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 animate-float">
+                <div class="absolute -inset-1.5 rounded-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600 blur-md opacity-80 animate-pulse-glow"></div>
+                <img src="https://iili.io/ofMfl1V.jpg" 
+                     alt="ZERO TO HERO Logo" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/160x160/0d1527/10b981?text=ZERO+TO+HERO';"
+                     class="relative w-full h-full object-cover rounded-full border-2 border-emerald-400 shadow-2xl">
+                
+                <!-- Verified Badge Icon -->
+                <div class="absolute bottom-1 right-1 bg-emerald-500 text-slate-950 p-1.5 rounded-full border-2 border-slate-950 shadow-xl" title="SEBI Policy Compliant Educational Creator">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                    </svg>
+                </div>
+            </div>
 
-  <section class="box">
-    <h2>About This Community</h2>
-    <p>This is a free learning space for students and beginners who want to understand how the Indian stock market works. Everything shared here is educational: concepts, explanations and examples, in simple language.</p>
-    <p>The goal is knowledge, not recommendations. Members learn to read charts, understand market terms and think about risk before anything else.</p>
-  </section>
+            <!-- Category Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold mb-4 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>INDEX OPTIONS & TECHNICAL ANALYSIS LEARNING</span>
+            </div>
 
-  <section class="box">
-    <h2>Your Learning Path</h2>
-    <ol class="steps">
-      <li><b>Market Basics:</b> what shares, NSE, BSE and indices are</li>
-      <li><b>Index Concepts:</b> how Nifty 50 and Bank Nifty are made</li>
-      <li><b>Chart Reading:</b> candlesticks, trends, support and resistance</li>
-      <li><b>Options Basics:</b> call, put, strike price, expiry and premium</li>
-      <li><b>Risk Awareness:</b> stop-loss, position size and capital protection</li>
-      <li><b>Mindset:</b> patience, discipline and emotional control</li>
-    </ol>
-  </section>
+            <!-- Primary Title -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-3 leading-tight">
+                ZERO TO HERO
+            </h1>
 
-  <section class="box">
-    <h2>Key Terms Explained</h2>
-    <dl>
-      <dt>Nifty 50</dt>
-      <dd>An index of 50 large companies listed on the NSE. It shows the overall direction of the Indian market.</dd>
-      <dt>Bank Nifty</dt>
-      <dd>An index made up of major banking stocks. It reflects how the banking sector is moving.</dd>
-      <dt>Candlestick</dt>
-      <dd>A chart symbol that shows the open, high, low and close price for a time period.</dd>
-      <dt>Support &amp; Resistance</dt>
-      <dd>Price levels where a market has often paused or turned in the past.</dd>
-      <dt>Option</dt>
-      <dd>A contract linked to an underlying asset. It comes with a strike price and an expiry date.</dd>
-      <dt>Stop-loss</dt>
-      <dd>A risk-control concept that limits how much loss one is willing to accept on a position.</dd>
-    </dl>
-  </section>
+            <!-- Subheading -->
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+                Decode <span class="text-emerald-400 font-semibold">Nifty & BankNifty Price Action</span> with institutional chart structures, daily levels, breakout confirmation, and risk mitigation strategies.
+            </p>
 
-  <section class="box note">
-    <h2>Please Note</h2>
-    <p>This channel shares educational content only. We do not offer buy or sell recommendations, and we do not manage anyone's money. Market learning needs time, practice and patience.</p>
-  </section>
+            <!-- Primary High-Converting CTA Button -->
+            <div class="max-w-md mx-auto space-y-3 mb-10">
+                <a href="https://t.me/+dbRoCpEJPwE4ODll" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="group relative inline-flex items-center justify-center w-full px-6 py-4 text-lg font-extrabold text-slate-950 bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 rounded-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] hover:shadow-[0_0_45px_rgba(16,185,129,0.7)] transform hover:-translate-y-0.5 transition-all duration-200">
+                    
+                    <!-- Telegram Icon -->
+                    <svg class="w-7 h-7 mr-3 fill-slate-950" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.07-.78 4.18-1.82 6.97-3.02 8.37-3.61 3.99-1.68 4.82-1.97 5.36-1.98.12 0 .38.03.55.17.14.12.18.28.2.45-.02.07-.02.16-.04.24z"/>
+                    </svg>
+                    
+                    <span>JOIN TELEGRAM CHANNEL FREE</span>
+                    
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                </a>
+                
+                <div class="flex items-center justify-center gap-4 text-xs text-slate-400 font-medium">
+                    <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        Free Lifetime Access
+                    </span>
+                    <span class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        No Paid Subscriptions
+                    </span>
+                </div>
+            </div>
 
-  <p class="disc">For educational and informational purposes only. Not investment advice. Past performance does not indicate future results, and we do not guarantee any returns. Investments in the securities market are subject to market risks; please consult a SEBI-registered advisor before making any investment decisions.</p>
-</main>
+            <!-- Learning Highlights Counter Grid -->
+            <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto text-center">
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">Daily</div>
+                    <div class="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-medium">Market Charts</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-xl sm:text-2xl font-extrabold text-teal-300">Strict</div>
+                    <div class="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-medium">Risk Discipline</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">100%</div>
+                    <div class="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-medium">Educational</div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- "Inside The Community" 4-Card Educational Grid -->
+        <section class="max-w-4xl mx-auto px-4 py-10">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">Learning Modules</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-3">What You Master Inside The Community</h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-xl mx-auto">Enhance your index reading skills with structured technical content shared daily.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                
+                <!-- Card 1 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Pre-Market & Live Index Structure</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Learn how key support & resistance zones, CPR levels, and gap openings influence Nifty and BankNifty movements.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-300 flex items-center justify-center mb-4 border border-teal-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Price Action & Chart Patterns</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Understand double bottom/top reversals, channel breakouts, flag formations, and real-time volume confirmation signals.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Capital Protection & Position Sizing</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Master strict 1:2+ Risk-to-Reward parameters, trailing stop loss mechanics, and smart lot sizing to preserve your trading capital.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card glass-card-hover p-6 rounded-2xl relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-xl bg-teal-500/10 text-teal-300 flex items-center justify-center mb-4 border border-teal-500/20">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Market Psychology & Discipline</h3>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+                        Overcome emotional revenge trading, FOMO entries, and over-trading through structured systematic trade planning.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mentor Section / Why Follow ZERO TO HERO -->
+        <section class="max-w-4xl mx-auto px-4 py-8">
+            <div class="glass-card p-6 sm:p-8 rounded-3xl border border-emerald-500/30 relative overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center gap-6">
+                    <img src="https://iili.io/ofMfl1V.jpg" 
+                         alt="ZERO TO HERO" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/120x120/0d1527/10b981?text=ZERO+TO+HERO';"
+                         class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover border-2 border-emerald-400 shadow-xl shrink-0">
+                    
+                    <div class="space-y-3 text-center md:text-left">
+                        <div class="inline-block px-3 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-bold">
+                            Official Educational Channel
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white">Why Join ZERO TO HERO</h3>
+                        
+                        <ul class="text-xs sm:text-sm text-slate-300 space-y-2 text-left pt-1">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>Simplified chart reading rules explained in simple Hindi & English.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>No quick-rich promises — 100% focused on risk discipline and process.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                                <span>Daily index level analysis for Nifty 50 and Bank Nifty option traders.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary CTA Section -->
+        <section class="max-w-4xl mx-auto px-4 py-10 text-center">
+            <div class="glass-card p-8 rounded-3xl border border-slate-800 space-y-4">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Ready to Upgrade Your Chart Reading?</h3>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto">
+                    Join thousands of index option enthusiasts learning price action analysis every single market day.
+                </p>
+                <div class="pt-2">
+                    <a href="https://t.me/+dbRoCpEJPwE4ODll" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-slate-950 bg-emerald-400 hover:bg-emerald-300 rounded-xl shadow-lg transition-all transform hover:scale-105">
+                        <span>TAP TO JOIN TELEGRAM CHANNEL NOW</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-3xl mx-auto px-4 py-8">
+            <h3 class="text-xl sm:text-2xl font-bold text-center text-white mb-6">Frequently Asked Questions</h3>
+            <div class="space-y-3">
+                <div class="glass-card rounded-xl p-4 text-xs sm:text-sm border border-slate-800">
+                    <div class="font-bold text-white mb-1">Q: Is this channel free for everyone?</div>
+                    <div class="text-slate-400">Yes, the Telegram channel is completely free to join and access daily educational posts.</div>
+                </div>
+                <div class="glass-card rounded-xl p-4 text-xs sm:text-sm border border-slate-800">
+                    <div class="font-bold text-white mb-1">Q: Do you guarantee profits or give call tips?</div>
+                    <div class="text-slate-400">No. We strictly do not provide buy/sell tips or guaranteed returns. All chart posts are strictly for educational and technical learning purposes.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SEBI Disclaimer & Ads Compliance Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 px-4 text-slate-400 text-xs leading-relaxed">
+        <div class="max-w-4xl mx-auto space-y-4">
+            
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center sm:text-left">
+                <h5 class="text-slate-200 font-bold mb-1.5 flex items-center justify-center sm:justify-start gap-1.5 text-xs">
+                    <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    SEBI & Regulatory Disclaimer
+                </h5>
+                <p class="text-[11px] text-slate-400 leading-normal">
+                    <strong>ZERO TO HERO</strong> is an independent educational platform created solely for market literacy, chart pattern discussion, and technical analysis concepts. We are <strong>NOT SEBI Registered</strong> advisors or research analysts. No content on this channel or website should be construed as financial advice or an offer to buy/sell securities. Derivatives trading involves high risk. Please consult a SEBI registered investment advisor before taking financial decisions.
+                </p>
+            </div>
+
+            <p class="text-[10px] text-slate-500 text-center">
+                This page is not affiliated with, endorsed by, or a part of Meta Platforms Inc., Facebook, Instagram, or Google LLC.
+            </p>
+
+            <div class="text-center text-[11px] text-slate-500 pt-3 border-t border-slate-900 space-y-2">
+                <div>© <span id="year"></span> ZERO TO HERO. All Rights Reserved.</div>
+                <div>
+                    <a href="https://t.me/+3XoqJNLxYHswNTc1" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-1.5 text-slate-400 hover:text-emerald-400 transition-colors font-medium text-xs bg-slate-900 px-3.5 py-1.5 rounded-full border border-slate-800">
+                        <span>Promoted By</span>
+                        <span class="text-emerald-400 font-bold underline underline-offset-2 decoration-emerald-500/40">AD BUILD AGENCY</span>
+                        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
+  
 </html>
